@@ -134,3 +134,33 @@ const counterObserver = new IntersectionObserver(
 );
 
 counters.forEach((el) => counterObserver.observe(el));
+// ================================
+// SCROLL REVEAL ANIMATION
+// ================================
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("in-view");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});

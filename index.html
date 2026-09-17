@@ -11,7 +11,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +21,9 @@
 <body>
 
     <!-- Scroll progress -->
-    <div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgress"></div></div>
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
 
     <!-- Navigation Bar -->
 
@@ -54,6 +58,10 @@
                 </li>
 
                 <li>
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+
+                <li>
                     <a href="#projects" class="nav-link">Projects</a>
                 </li>
 
@@ -74,11 +82,17 @@
 
     <!-- Hero Section -->
 
+    <!-- ================================
+     HERO SECTION
+================================ -->
+
     <section id="home" class="hero">
 
         <div class="hero-grid"></div>
 
         <div class="container hero-content">
+
+            <!-- HERO TEXT -->
 
             <div class="hero-text">
 
@@ -97,10 +111,15 @@
                 <p class="hero-description">
 
                     Android Developer with 3+ years of experience building
-                    scalable, high-performance mobile applications using Kotlin,
-                    Jetpack Compose, MVVM, and On-Device AI/ML.
+                    scalable, production-ready mobile applications using Kotlin,
+                    Jetpack Compose, MVVM, Clean Architecture, and On-Device AI/ML.
+
+                    Experienced in enterprise authentication systems including
+                    Multi-Factor Authentication (MFA), OTP verification,
+                    and Microsoft Azure Single Sign-On (SSO).
 
                 </p>
+
 
                 <div class="hero-buttons">
 
@@ -108,11 +127,30 @@
                         View My Projects
                     </a>
 
-                    <a href="assets/resume/Dipak_B_Kalsariya_Resume.pdf"
-                       class="btn secondary-btn"
-                       download>
+                    <a href="assets/resume/Dipak_B_Kalsariya_Resume.pdf" class="btn secondary-btn" download>
 
                         Download Resume
+
+                    </a>
+
+                </div>
+
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="hero-socials">
+
+                    <!-- <a href="mailto:mrdipakkalsariya@gmail.com">
+                    Email
+                </a> -->
+
+                    <a href="https://github.com/mrdipakkalsariya" target="_blank">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank">
+
+                        LinkedIn
 
                     </a>
 
@@ -121,32 +159,34 @@
             </div>
 
 
-            <div class="hero-visual">
+            <!-- PROFILE IMAGE -->
 
-              <div class="hero-visual-inner">
+            <div class="hero-profile">
 
-                <div class="code-window">
-                    <div class="code-window-bar">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="code-window-title">Developer.kt</span>
+                <div class="profile-glow"></div>
+
+                <div class="profile-card">
+
+                    <div class="profile-image-wrapper">
+
+                        <img src="images/profile.jpg" alt="Dipak Kalsariya Android Developer" class="profile-image">
+
                     </div>
-                    <div class="code-window-body">
-<pre><code><span class="c-comment">// developer.kt</span>
-<span class="c-kw">class</span> <span class="c-class">Developer</span> {
-    <span class="c-kw">val</span> name  = <span class="c-string">"Dipak Kalsariya"</span>
-    <span class="c-kw">val</span> role  = <span class="c-string">"Android Developer"</span>
-    <span class="c-kw">val</span> exp   = <span class="c-string">"3+ years"</span>
-    <span class="c-kw">val</span> stack = <span class="c-fn">listOf</span>(
-        <span class="c-string">"Kotlin"</span>, <span class="c-string">"Compose"</span>,
-        <span class="c-string">"MVVM"</span>, <span class="c-string">"On-Device AI"</span>
-    )
-}<span class="cursor-blink">|</span></code></pre>
+
+                    <div class="profile-info">
+
+                        <h3>Dipak Kalsariya</h3>
+
+                        <p>Android Developer</p>
+
+                        <span class="availability">
+                            <span></span>
+                            Open to Opportunities
+                        </span>
+
                     </div>
+
                 </div>
-
-              </div>
 
             </div>
 
@@ -225,7 +265,7 @@
 
             <div class="skills-grid">
 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <span class="skill-ext">.kt</span>
                     <h3>Languages</h3>
 
@@ -236,7 +276,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <span class="skill-ext">.xml</span>
                     <h3>Android</h3>
 
@@ -248,7 +288,7 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <span class="skill-ext">.mvvm</span>
                     <h3>Architecture</h3>
 
@@ -260,18 +300,19 @@
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <span class="skill-ext">.tflite</span>
                     <h3>AI / ML</h3>
 
                     <p>Google ML Kit</p>
                     <p>TensorFlow Lite</p>
                     <p>MediaPipe</p>
+                    <p>Hugging Face</p>
 
                 </div>
 
 
-                <div class="skill-card">
+                <div class="skill-card reveal">
                     <span class="skill-ext">.db</span>
                     <h3>Database</h3>
 
@@ -282,13 +323,29 @@
                 </div>
 
 
-                <div class="skill-card">
-                    <span class="skill-ext">.git</span>
-                    <h3>Tools</h3>
+                <div class="skill-card reveal">
+
+                    <span class="skill-ext">.enterprise</span>
+
+                    <h3>Enterprise & Tools</h3>
 
                     <p>Git / GitHub</p>
                     <p>Android Studio</p>
                     <p>REST APIs</p>
+                    <p>Microsoft Azure</p>
+                    <p>Firebase</p>
+
+                </div>
+                <div class="skill-card reveal">
+
+                    <span class="skill-ext">.security</span>
+
+                    <h3>Security & Authentication</h3>
+
+                    <p>Multi-Factor Authentication</p>
+                    <p>OTP Verification</p>
+                    <p>Azure SSO</p>
+                    <p>Enterprise Login Systems</p>
 
                 </div>
 
@@ -317,34 +374,78 @@
 
             <div class="ai-tools-grid">
 
+                <!-- ChatGPT -->
+
                 <div class="ai-tool-card" style="--tool-color:#74AA9C;">
-                    <span class="ai-tool-icon">GPT</span>
+
+                    <div class="ai-tool-icon">
+                        <img src="images/chatgpt.png" alt="ChatGPT">
+                    </div>
+
                     <h3>ChatGPT</h3>
+
                     <p>Planning &amp; debugging</p>
+
                 </div>
+
+
+                <!-- Claude -->
 
                 <div class="ai-tool-card" style="--tool-color:#D97757;">
-                    <span class="ai-tool-icon">CLD</span>
+
+                    <div class="ai-tool-icon">
+                        <img src="images/claude.png" alt="Claude">
+                    </div>
+
                     <h3>Claude</h3>
+
                     <p>Code review &amp; docs</p>
+
                 </div>
+
+
+                <!-- Cursor -->
 
                 <div class="ai-tool-card" style="--tool-color:#8B5CF6;">
-                    <span class="ai-tool-icon">CUR</span>
+
+                    <div class="ai-tool-icon">
+                        <img src="images/cursor.png" alt="Cursor">
+                    </div>
+
                     <h3>Cursor</h3>
+
                     <p>AI pair programming</p>
+
                 </div>
+
+
+                <!-- Gemini -->
 
                 <div class="ai-tool-card" style="--tool-color:#4C8DF6;">
-                    <span class="ai-tool-icon">GEM</span>
+
+                    <div class="ai-tool-icon">
+                        <img src="images/gemini.png" alt="Gemini">
+                    </div>
+
                     <h3>Gemini</h3>
+
                     <p>Research &amp; ideation</p>
+
                 </div>
 
+
+                <!-- DeepSeek -->
+
                 <div class="ai-tool-card" style="--tool-color:#4D6BFE;">
-                    <span class="ai-tool-icon">DSK</span>
+
+                    <div class="ai-tool-icon">
+                        <img src="images/deepseek.png" alt="DeepSeek">
+                    </div>
+
                     <h3>DeepSeek</h3>
+
                     <p>Logic &amp; problem solving</p>
+
                 </div>
 
             </div>
@@ -374,7 +475,7 @@
                         <span class="pulse-dot"></span>
                     </div>
 
-                    <div class="experience-card">
+                    <div class="experience-card reveal">
 
                         <h3>
                             Software Engineer – Android
@@ -396,12 +497,18 @@
                             </li>
 
                             <li>
-                                Implemented kiosk mode, geo-fencing,
-                                remote configuration, and device restriction features.
+                                Implemented Multi-Factor Authentication (MFA) workflows
+                                including OTP-based secure authentication.
                             </li>
 
                             <li>
-                                Integrated Microsoft Azure SSO and MFA authentication.
+                                Integrated Microsoft Azure Single Sign-On (SSO)
+                                for enterprise authentication and login systems.
+                            </li>
+
+                            <li>
+                                Implemented kiosk mode, geo-fencing,
+                                remote configuration, and device restriction features.
                             </li>
 
                             <li>
@@ -425,6 +532,124 @@
 
     </section>
 
+    <!-- ================================
+     EDUCATION SECTION
+================================ -->
+
+    <section id="education" class="section">
+
+        <div class="container">
+
+            <p class="code-label">// education</p>
+
+            <h2 class="section-title">Education</h2>
+
+            <p class="section-subtitle">
+                My academic background and professional certifications
+            </p>
+
+
+            <div class="education-container">
+
+                <!-- EDUCATION ITEM 1 -->
+
+                <div class="education-card reveal">
+
+                    <div class="education-icon">
+                        <span>🎓</span>
+                    </div>
+
+                    <div class="education-content">
+
+                        <div class="education-header">
+
+                            <h3>Red & White Multimedia Education</h3>
+
+                            <span class="education-year">
+                                2021 – 2022
+                            </span>
+
+                        </div>
+
+                        <p class="education-degree">
+                            Certified Android Developer
+                        </p>
+
+                        <p class="education-grade">
+                            Grade: A+ Grade
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EDUCATION ITEM 2 -->
+
+                <div class="education-card reveal">
+
+                    <div class="education-icon">
+                        <span>🏫</span>
+                    </div>
+
+                    <div class="education-content">
+
+                        <div class="education-header">
+
+                            <h3>S.M.T B H Shah (Karjanwala)</h3>
+
+                        </div>
+
+                        <p class="education-degree">
+                            Draughtsman Civil Engineering
+                        </p>
+
+                        <p class="education-grade">
+                            Grade: B+ Grade
+                        </p>
+
+                        <p class="education-details">
+                            AutoCAD Software, Team Management
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EDUCATION ITEM 3 -->
+
+                <div class="education-card reveal">
+
+                    <div class="education-icon">
+                        <span>📚</span>
+                    </div>
+
+                    <div class="education-content">
+
+                        <div class="education-header">
+
+                            <h3>Wisdom International School - India</h3>
+
+                            <span class="education-year">
+                                Jul 2017 – May 2019
+                            </span>
+
+                        </div>
+
+                        <p class="education-degree">
+                            HSC, Science Stream
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- Projects Section -->
 
@@ -447,11 +672,10 @@
 
                 <!-- Project 1 -->
 
-                <div class="project-card">
+                <div class="project-card reveal">
 
                     <div class="project-image">
-                        <img src="images/face-recognition.jpg"
-                             alt="Face Recognition Project">
+                        <img src="images/face-recognition_01.jpg" alt="Face Recognition Project">
                     </div>
 
                     <div class="project-content">
@@ -483,11 +707,10 @@
 
                 <!-- Project 2 -->
 
-                <div class="project-card">
+                <div class="project-card reveal">
 
                     <div class="project-image">
-                        <img src="images/ai-chatbot.jpg"
-                             alt="Offline AI Chatbot">
+                        <img src="images/ai-chatbot_01.jpeg" alt="Offline AI Chatbot">
                     </div>
 
                     <div class="project-content">
@@ -518,11 +741,10 @@
 
                 <!-- Project 3 -->
 
-                <div class="project-card">
+                <div class="project-card reveal">
 
                     <div class="project-image">
-                        <img src="images/android-tv.png"
-                             alt="Android TV Kiosk">
+                        <img src="images/android-tv_01.jpeg" alt="Android TV Kiosk">
                     </div>
 
                     <div class="project-content">
@@ -553,11 +775,10 @@
 
                 <!-- Project 4 -->
 
-                <div class="project-card">
+                <div class="project-card reveal">
 
                     <div class="project-image">
-                        <img src="images/mdm-project.jpg"
-                             alt="MDM Solution">
+                        <img src="images/mdm-project_01.jpeg" alt="MDM Solution">
                     </div>
 
                     <div class="project-content">
@@ -659,7 +880,7 @@
 
     <!-- Contact Section -->
 
-    <section id="contact" class="section contact-section">
+    <!-- <section id="contact" class="section contact-section">
 
         <div class="container">
 
@@ -681,7 +902,7 @@
                     Email
                 </a>
 
-                <a href="https://github.com/"
+                <a href="https://github.com/mrdipakkalsariya"
                    target="_blank">
                     GitHub
                 </a>
@@ -695,8 +916,136 @@
 
         </div>
 
-    </section>
+    </section> -->
 
+    <!-- ================================
+     CONTACT SECTION
+================================ -->
+
+    <section id="contact" class="section contact-section">
+
+        <div class="container">
+
+            <p class="code-label">// contact</p>
+
+            <h2 class="section-title">Let's Connect</h2>
+
+            <p class="section-subtitle">
+                Have an opportunity or want to discuss Android development?
+                Feel free to get in touch.
+            </p>
+
+
+            <div class="contact-grid">
+
+                <!-- EMAIL CARD -->
+
+                <a href="mailto:mrdipakkalsariya@gmail.com" class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span>Email</span>
+
+                        <strong>
+                            mrdipakkalsariya@gmail.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PHONE CARD -->
+
+                <a href="tel:+919898970987" class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span>Phone</span>
+
+                        <strong>
+                            +91 98989 70987
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <!-- LINKEDIN CARD -->
+
+                <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank" class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        in
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span>LinkedIn</span>
+
+                        <strong>
+                            linkedin.com/in/dipak-kalsariya
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <!-- GITHUB CARD -->
+
+                <a href="https://github.com/mrdipakkalsariya" target="_blank" class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        ◇
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span>GitHub</span>
+
+                        <strong>
+                            github.com/mrdipakkalsariya
+                        </strong>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT CTA
+
+            <div class="contact-message">
+
+                <h3>Looking for an Android Developer?</h3>
+
+                <p>
+                    I'm open to discussing new opportunities, interesting
+                    projects, and collaborations.
+                </p>
+
+                <a href="mailto:mrdipakkalsariya@gmail.com" class="btn primary-btn">
+
+                    Send Me an Email →
+
+                </a>
+
+            </div> -->
+
+        </div>
+
+    </section>
 
     <!-- Footer -->
 
