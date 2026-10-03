@@ -2,12 +2,27 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dipak Kalsariya | Android Developer</title>
+    <meta name="description"
+        content="Dipak Kalsariya - Android Developer with 3+ years of experience in Kotlin, Jetpack Compose, MVVM, On-Device AI/ML, MFA and Azure SSO.">
+    <meta name="theme-color" content="#0a0e16">
+
+    <!-- Open Graph (nice link preview when you share on LinkedIn / WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dipak Kalsariya | Android Developer">
+    <meta property="og:description"
+        content="Kotlin, Jetpack Compose, On-Device AI/ML and enterprise authentication. See my projects and certifications.">
+    <meta property="og:image" content="images/profile.jpg">
+
+    <!-- Favicon (inline, no extra file needed) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0e16'/><text x='50' y='68' font-size='56' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23e7ecf3'>D</text><circle cx='78' cy='72' r='7' fill='%233add8a'/></svg>">
+
+    <!-- Adds the "js" class early so reveal animations never hide content if JS fails -->
+    <script>document.documentElement.classList.add("js");</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,170 +35,119 @@
 
 <body>
 
+    <a href="#about" class="skip-link">Skip to content</a>
+
     <!-- Scroll progress -->
-    <div class="scroll-progress">
+    <div class="scroll-progress" aria-hidden="true">
         <div class="scroll-progress-bar" id="scrollProgress"></div>
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- Soft glow that follows the mouse (desktop only) -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- ================================
+         NAVIGATION
+    ================================ -->
 
     <header class="header" id="header">
+        <nav class="navbar container" aria-label="Main navigation">
 
-        <nav class="navbar container">
-
-            <a href="#" class="logo">
-                Dipak<span>.</span>
-            </a>
+            <a href="#home" class="logo">Dipak<span>.</span></a>
 
             <ul class="nav-menu" id="navMenu">
-
-                <li>
-                    <a href="#home" class="nav-link active">Home</a>
-                </li>
-
-                <li>
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-
-                <li>
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#ai-tools" class="nav-link">AI Tools</a>
-                </li>
-
-                <li>
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-
-                <li>
-                    <a href="#education" class="nav-link">Education</a>
-                </li>
-
-                <li>
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#ai-tools" class="nav-link">AI Tools</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navMenu">
                 <span></span><span></span><span></span>
             </button>
 
         </nav>
-
     </header>
 
 
-    <!-- Hero Section -->
-
     <!-- ================================
-     HERO SECTION
-================================ -->
+         HERO SECTION
+         NOTE: text comes FIRST in the HTML, so on mobile the text shows first
+         and the photo card comes after it.
+    ================================ -->
 
     <section id="home" class="hero">
 
-        <div class="hero-grid"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
 
         <div class="container hero-content">
 
             <!-- HERO TEXT -->
-
             <div class="hero-text">
 
-                <p class="hero-subtitle">
-                    <span class="dot-live"></span> HELLO, I'M
+                <p class="hero-subtitle hero-anim" style="--i:0">
+                    <span class="dot-live"></span> Hello, I'm
                 </p>
 
-                <h1>
-                    Dipak Kalsariya
-                </h1>
+                <h1 class="hero-anim" style="--i:1">Dipak Kalsariya</h1>
 
-                <h2>
-                    Android Developer
-                </h2>
+                <h2 class="hero-anim" style="--i:2">Android Developer</h2>
 
-                <p class="hero-description">
+                <p class="hero-typed hero-anim" style="--i:3" aria-live="off">
+                    <span class="hero-typed-prefix">I build</span>
+                    <span class="typed-text" id="typedText">Android apps</span><span class="typed-cursor">|</span>
+                </p>
 
+                <p class="hero-description hero-anim" style="--i:4">
                     Android Developer with 3+ years of experience building
                     scalable, production-ready mobile applications using Kotlin,
                     Jetpack Compose, MVVM, Clean Architecture, and On-Device AI/ML.
-
                     Experienced in enterprise authentication systems including
                     Multi-Factor Authentication (MFA), OTP verification,
                     and Microsoft Azure Single Sign-On (SSO).
-
                 </p>
 
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="btn primary-btn">
-                        View My Projects
-                    </a>
-
-                    <a href="assets/resume/Dipak_B_Kalsariya_Resume.pdf" class="btn secondary-btn" download>
-
-                        Download Resume
-
-                    </a>
-
+                <div class="hero-buttons hero-anim" style="--i:5">
+                    <a href="#projects" class="btn primary-btn">View My Projects</a>
+                    <a href="assets/resume/Dipak_K_Android_3YOE.pdf" class="btn secondary-btn" download>Download
+                        Resume</a>
                 </div>
 
-
-                <!-- SOCIAL LINKS -->
-
-                <div class="hero-socials">
-
-                    <!-- <a href="mailto:mrdipakkalsariya@gmail.com">
-                    Email
-                </a> -->
-
-                    <a href="https://github.com/mrdipakkalsariya" target="_blank">
-                        GitHub
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank">
-
-                        LinkedIn
-
-                    </a>
-
+                <div class="hero-socials hero-anim" style="--i:6">
+                    <a href="https://github.com/mrdipakkalsariya" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank"
+                        rel="noopener">LinkedIn</a>
                 </div>
 
             </div>
 
 
-            <!-- PROFILE IMAGE -->
+            <!-- PROFILE CARD -->
+            <div class="hero-profile hero-anim" style="--i:3">
 
-            <div class="hero-profile">
+                <div class="profile-glow" aria-hidden="true"></div>
 
-                <div class="profile-glow"></div>
+                <!-- floating tech chips -->
+                <span class="float-chip chip-1" aria-hidden="true">Kotlin</span>
+                <span class="float-chip chip-2" aria-hidden="true">Compose</span>
+                <span class="float-chip chip-3" aria-hidden="true">AI / ML</span>
 
-                <div class="profile-card">
+                <div class="profile-card tilt">
 
                     <div class="profile-image-wrapper">
-
-                        <img src="images/profile.jpg" alt="Dipak Kalsariya Android Developer" class="profile-image">
-
+                        <img src="images/profile.jpg" alt="Dipak Kalsariya, Android Developer" class="profile-image"
+                            width="330" height="380">
                     </div>
 
                     <div class="profile-info">
-
                         <h3>Dipak Kalsariya</h3>
-
                         <p>Android Developer</p>
-
-                        <span class="availability">
-                            <span></span>
-                            Open to Opportunities
-                        </span>
-
+                        <span class="availability"><span></span>Open to Opportunities</span>
                     </div>
 
                 </div>
@@ -192,874 +156,566 @@
 
         </div>
 
+        <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
+            <span></span>
+        </a>
+
     </section>
 
 
-    <!-- About Section -->
+    <!-- TECH MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack">
+            <span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span><span>Clean Architecture</span>
+            <span>Coroutines</span><span>Room</span><span>Firebase</span><span>TensorFlow Lite</span>
+            <span>ML Kit</span><span>MediaPipe</span><span>CameraX</span><span>Azure SSO</span>
+            <span>MFA / OTP</span><span>Android TV</span><span>REST APIs</span>
+        </div>
+    </div>
+
+
+    <!-- ================================
+         ABOUT
+    ================================ -->
 
     <section id="about" class="section">
-
         <div class="container">
 
             <p class="code-label">// about-me</p>
-            <h2 class="section-title">
-                About Me
-            </h2>
-            <p class="section-subtitle">
-                My professional journey
-            </p>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">My professional journey</p>
 
+            <div class="about-grid">
 
-            <div class="about-content">
-
-                <div class="about-text">
-
+                <div class="about-text reveal">
                     <p>
-
                         I'm an Android Developer with more than 3 years of
                         experience developing enterprise-grade and
                         production-ready Android applications.
-
                     </p>
-
                     <p>
-
                         I specialize in Kotlin, Java, Jetpack Compose,
                         MVVM Architecture, Clean Architecture,
                         REST APIs, and On-Device AI/ML.
-
                     </p>
-
                     <p>
-
                         Currently working at SSM InfoTech Solutions Pvt. Ltd.,
                         where I contribute to enterprise mobility and
                         MDM solutions.
-
                     </p>
+                </div>
 
+                <div class="about-facts reveal">
+                    <div class="fact">
+                        <strong>3+</strong>
+                        <span>Years of Android experience</span>
+                    </div>
+                    <div class="fact">
+                        <strong>7+</strong>
+                        <span>Production apps delivered</span>
+                    </div>
+                    <div class="fact">
+                        <strong>MFA + SSO</strong>
+                        <span>Enterprise authentication</span>
+                    </div>
+                    <div class="fact">
+                        <strong>On-device AI</strong>
+                        <span>ML Kit, TFLite, MediaPipe</span>
+                    </div>
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- Skills Section -->
+    <!-- ================================
+         SKILLS
+    ================================ -->
 
     <section id="skills" class="section skills-section">
-
         <div class="container">
 
             <p class="code-label">// technical-skills</p>
-            <h2 class="section-title">
-                Technical Skills
-            </h2>
-
-            <p class="section-subtitle">
-                Technologies I work with
-            </p>
-
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies I work with</p>
 
             <div class="skills-grid">
 
                 <div class="skill-card reveal">
                     <span class="skill-ext">.kt</span>
                     <h3>Languages</h3>
-
-                    <p>Kotlin</p>
-                    <p>Java</p>
-                    <p>JavaScript</p>
-
+                    <div class="chips"><span>Kotlin</span><span>Java</span><span>JavaScript</span></div>
                 </div>
-
 
                 <div class="skill-card reveal">
                     <span class="skill-ext">.xml</span>
                     <h3>Android</h3>
-
-                    <p>Jetpack Compose</p>
-                    <p>Android SDK</p>
-                    <p>Android TV</p>
-                    <p>CameraX</p>
-
+                    <div class="chips"><span>Jetpack Compose</span><span>Android SDK</span><span>Android
+                            TV</span><span>CameraX</span></div>
                 </div>
-
 
                 <div class="skill-card reveal">
                     <span class="skill-ext">.mvvm</span>
                     <h3>Architecture</h3>
-
-                    <p>MVVM</p>
-                    <p>Clean Architecture</p>
-                    <p>Dependency Injection</p>
-                    <p>Coroutines</p>
-
+                    <div class="chips"><span>MVVM</span><span>Clean Architecture</span><span>Dependency
+                            Injection</span><span>Coroutines</span></div>
                 </div>
-
 
                 <div class="skill-card reveal">
                     <span class="skill-ext">.tflite</span>
                     <h3>AI / ML</h3>
-
-                    <p>Google ML Kit</p>
-                    <p>TensorFlow Lite</p>
-                    <p>MediaPipe</p>
-                    <p>Hugging Face</p>
-
+                    <div class="chips"><span>Google ML Kit</span><span>TensorFlow Lite</span><span>MediaPipe</span><span>Hugging
+                            Face</span></div>
                 </div>
-
 
                 <div class="skill-card reveal">
                     <span class="skill-ext">.db</span>
                     <h3>Database</h3>
-
-                    <p>Room Database</p>
-                    <p>SQLite</p>
-                    <p>Firebase</p>
-
+                    <div class="chips"><span>Room Database</span><span>SQLite</span><span>Firebase</span></div>
                 </div>
 
-
                 <div class="skill-card reveal">
-
                     <span class="skill-ext">.enterprise</span>
-
-                    <h3>Enterprise & Tools</h3>
-
-                    <p>Git / GitHub</p>
-                    <p>Android Studio</p>
-                    <p>REST APIs</p>
-                    <p>Microsoft Azure</p>
-                    <p>Firebase</p>
-
+                    <h3>Enterprise &amp; Tools</h3>
+                    <div class="chips"><span>Git / GitHub</span><span>Android Studio</span><span>REST
+                            APIs</span><span>Microsoft Azure</span><span>Firebase</span></div>
                 </div>
+
                 <div class="skill-card reveal">
-
                     <span class="skill-ext">.security</span>
-
-                    <h3>Security & Authentication</h3>
-
-                    <p>Multi-Factor Authentication</p>
-                    <p>OTP Verification</p>
-                    <p>Azure SSO</p>
-                    <p>Enterprise Login Systems</p>
-
+                    <h3>Security &amp; Authentication</h3>
+                    <div class="chips"><span>Multi-Factor Authentication</span><span>OTP Verification</span><span>Azure
+                            SSO</span><span>Enterprise Login Systems</span></div>
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- AI Tools Section -->
+    <!-- ================================
+         AI TOOLS
+    ================================ -->
 
     <section id="ai-tools" class="section ai-tools-section">
-
         <div class="container">
 
             <p class="code-label">// ai-powered-workflow</p>
-            <h2 class="section-title">
-                AI-Assisted Development
-            </h2>
-
+            <h2 class="section-title">AI-Assisted Development</h2>
             <p class="section-subtitle">
                 I use AI tools daily to code faster, debug smarter, and ship with confidence
             </p>
 
-
             <div class="ai-tools-grid">
 
-                <!-- ChatGPT -->
-
-                <div class="ai-tool-card" style="--tool-color:#74AA9C;">
-
-                    <div class="ai-tool-icon">
-                        <img src="images/chatgpt.png" alt="ChatGPT">
-                    </div>
-
+                <div class="ai-tool-card reveal" style="--tool-color:#74AA9C;">
+                    <div class="ai-tool-icon"><img src="images/chatgpt.png" alt="ChatGPT" loading="lazy"></div>
                     <h3>ChatGPT</h3>
-
                     <p>Planning &amp; debugging</p>
-
                 </div>
 
-
-                <!-- Claude -->
-
-                <div class="ai-tool-card" style="--tool-color:#D97757;">
-
-                    <div class="ai-tool-icon">
-                        <img src="images/claude.png" alt="Claude">
-                    </div>
-
+                <div class="ai-tool-card reveal" style="--tool-color:#D97757;">
+                    <div class="ai-tool-icon"><img src="images/claude.png" alt="Claude" loading="lazy"></div>
                     <h3>Claude</h3>
-
                     <p>Code review &amp; docs</p>
-
                 </div>
 
-
-                <!-- Cursor -->
-
-                <div class="ai-tool-card" style="--tool-color:#8B5CF6;">
-
-                    <div class="ai-tool-icon">
-                        <img src="images/cursor.png" alt="Cursor">
-                    </div>
-
+                <div class="ai-tool-card reveal" style="--tool-color:#8B5CF6;">
+                    <div class="ai-tool-icon"><img src="images/cursor.png" alt="Cursor" loading="lazy"></div>
                     <h3>Cursor</h3>
-
                     <p>AI pair programming</p>
-
                 </div>
 
-
-                <!-- Gemini -->
-
-                <div class="ai-tool-card" style="--tool-color:#4C8DF6;">
-
-                    <div class="ai-tool-icon">
-                        <img src="images/gemini.png" alt="Gemini">
-                    </div>
-
+                <div class="ai-tool-card reveal" style="--tool-color:#4C8DF6;">
+                    <div class="ai-tool-icon"><img src="images/gemini.png" alt="Gemini" loading="lazy"></div>
                     <h3>Gemini</h3>
-
                     <p>Research &amp; ideation</p>
-
                 </div>
 
-
-                <!-- DeepSeek -->
-
-                <div class="ai-tool-card" style="--tool-color:#4D6BFE;">
-
-                    <div class="ai-tool-icon">
-                        <img src="images/deepseek.png" alt="DeepSeek">
-                    </div>
-
+                <div class="ai-tool-card reveal" style="--tool-color:#4D6BFE;">
+                    <div class="ai-tool-icon"><img src="images/deepseek.png" alt="DeepSeek" loading="lazy"></div>
                     <h3>DeepSeek</h3>
-
                     <p>Logic &amp; problem solving</p>
-
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- Experience Section -->
+    <!-- ================================
+         EXPERIENCE
+    ================================ -->
 
     <section id="experience" class="section">
-
         <div class="container">
 
             <p class="code-label">// experience</p>
-            <h2 class="section-title">
-                Experience
-            </h2>
-
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Where I've been building</p>
 
             <div class="timeline">
-
                 <div class="timeline-item">
 
-                    <div class="timeline-marker">
-                        <span class="pulse-dot"></span>
-                    </div>
+                    <div class="timeline-marker"><span class="pulse-dot"></span></div>
 
                     <div class="experience-card reveal">
-
-                        <h3>
-                            Software Engineer – Android
-                        </h3>
-
-                        <h4>
-                            SSM InfoTech Solutions Pvt. Ltd.
-                        </h4>
-
-                        <span class="experience-date">
-                            June 2023 – Present
-                        </span>
+                        <h3>Software Engineer – Android</h3>
+                        <h4>SSM InfoTech Solutions Pvt. Ltd.</h4>
+                        <span class="experience-date">June 2023 – Present</span>
 
                         <ul>
-
-                            <li>
-                                Developed enterprise Android and MDM applications
-                                using Kotlin and Java.
+                            <li>Developed enterprise Android and MDM applications using Kotlin and Java.</li>
+                            <li>Implemented Multi-Factor Authentication (MFA) workflows including OTP-based secure
+                                authentication.</li>
+                            <li>Integrated Microsoft Azure Single Sign-On (SSO) for enterprise authentication and login
+                                systems.</li>
+                            <li>Implemented kiosk mode, geo-fencing, remote configuration, and device restriction
+                                features.</li>
+                            <li>Built Android TV applications with D-pad navigation and dynamic WebView configuration.
                             </li>
-
-                            <li>
-                                Implemented Multi-Factor Authentication (MFA) workflows
-                                including OTP-based secure authentication.
-                            </li>
-
-                            <li>
-                                Integrated Microsoft Azure Single Sign-On (SSO)
-                                for enterprise authentication and login systems.
-                            </li>
-
-                            <li>
-                                Implemented kiosk mode, geo-fencing,
-                                remote configuration, and device restriction features.
-                            </li>
-
-                            <li>
-                                Built Android TV applications with D-pad navigation
-                                and dynamic WebView configuration.
-                            </li>
-
-                            <li>
-                                Improved application performance and reduced crash rates.
-                            </li>
-
+                            <li>Improved application performance and reduced crash rates.</li>
                         </ul>
-
                     </div>
 
                 </div>
-
             </div>
 
         </div>
-
     </section>
 
+
     <!-- ================================
-     EDUCATION SECTION
-================================ -->
+         CERTIFICATIONS (NEW)
+    ================================ -->
+
+    <section id="certifications" class="section certs-section">
+        <div class="container">
+
+            <p class="code-label">// certifications</p>
+            <h2 class="section-title">Certifications &amp; Badges</h2>
+            <p class="section-subtitle">
+                I keep learning every month. Tap a badge to view it full size.
+            </p>
+
+            <div class="certs-grid">
+
+                <!-- Claude 101 -->
+                <article class="cert-card reveal tilt">
+                    <button class="cert-badge" style="--badge-bg:#d97757" data-full="images/claude101.png"
+                        data-title="Claude 101" aria-label="View Claude 101 badge full size">
+                        <img src="images/claude101.png" alt="Claude 101 course completion badge" loading="lazy">
+                    </button>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Anthropic · Claude Academy</span>
+                        <h3>Claude 101</h3>
+                        <p class="cert-meta">Issued Sep 2026</p>
+                        <p class="cert-id">ID: da356bf2767fa0b2ce3ee7539cb78556</p>
+                        <!-- <a class="cert-link" href="https://www.linkedin.com/in/dipak-kalsariya/details/certifications/"
+                            target="_blank" rel="noopener">Show credential</a> -->
+                    </div>
+                </article>
+
+                <!-- AI Fluency for creative work -->
+                <article class="cert-card reveal tilt">
+                    <button class="cert-badge" style="--badge-bg:#827dbd"
+                        data-full="images/claude_creative_work.png" data-title="AI Fluency for creative work"
+                        aria-label="View AI Fluency for creative work badge full size">
+                        <img src="images/claude_creative_work.png"
+                            alt="AI Fluency for creative work course completion badge" loading="lazy">
+                    </button>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Anthropic · Claude Academy</span>
+                        <h3>AI Fluency for creative work</h3>
+                        <p class="cert-meta">Issued Sep 2026</p>
+                        <p class="cert-id">ID: 1d2c3be6799c89b5b420870b77778b91</p>
+                        <!-- <a class="cert-link" href="https://www.linkedin.com/in/dipak-kalsariya/details/certifications/"
+                            target="_blank" rel="noopener">Show credential</a> -->
+                    </div>
+                </article>
+
+                <!-- Oracle -->
+                <article class="cert-card reveal tilt">
+                    <button class="cert-badge" style="--badge-bg:#eef3f6"
+                        data-full="images/oracle.png"
+                        data-title="Oracle Cloud Business Jumpstart"
+                        aria-label="View Oracle Cloud Business Jumpstart badge full size">
+                        <img src="images/oracle.png"
+                            alt="Oracle Cloud Business Jumpstart badge" loading="lazy">
+                    </button>
+                    <div class="cert-body">
+                        <span class="cert-issuer">Oracle</span>
+                        <h3>Cloud Business Jumpstart</h3>
+                        <!-- Edit the date below to match your Oracle badge -->
+                        <p class="cert-meta">Digital badge</p>
+                        <!-- <a class="cert-link" href="https://www.linkedin.com/in/dipak-kalsariya/details/certifications/"
+                            target="_blank" rel="noopener">Show credential</a> -->
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Continuous learning strip -->
+            <div class="learning reveal">
+                <div class="learning-head">
+                    <span class="live-dot"></span>
+                    <h3>Currently learning</h3>
+                </div>
+                <div class="chips">
+                    <span>Advanced Jetpack Compose</span>
+                    <span>On-device LLMs</span>
+                    <span>Prompt engineering</span>
+                    <span>Cloud fundamentals</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================================
+         EDUCATION
+    ================================ -->
 
     <section id="education" class="section">
-
         <div class="container">
 
             <p class="code-label">// education</p>
-
             <h2 class="section-title">Education</h2>
-
-            <p class="section-subtitle">
-                My academic background and professional certifications
-            </p>
-
+            <p class="section-subtitle">My academic background and professional certifications</p>
 
             <div class="education-container">
 
-                <!-- EDUCATION ITEM 1 -->
-
                 <div class="education-card reveal">
-
-                    <div class="education-icon">
-                        <span>🎓</span>
-                    </div>
-
+                    <div class="education-icon"><span>🎓</span></div>
                     <div class="education-content">
-
                         <div class="education-header">
-
-                            <h3>Red & White Multimedia Education</h3>
-
-                            <span class="education-year">
-                                2021 – 2022
-                            </span>
-
+                            <h3>Red &amp; White Multimedia Education</h3>
+                            <span class="education-year">2021 – 2022</span>
                         </div>
-
-                        <p class="education-degree">
-                            Certified Android Developer
-                        </p>
-
-                        <p class="education-grade">
-                            Grade: A+ Grade
-                        </p>
-
+                        <p class="education-degree">Certified Android Developer</p>
+                        <p class="education-grade">Grade: A+ Grade</p>
                     </div>
-
                 </div>
 
-
-                <!-- EDUCATION ITEM 2 -->
-
                 <div class="education-card reveal">
-
-                    <div class="education-icon">
-                        <span>🏫</span>
-                    </div>
-
+                    <div class="education-icon"><span>🏫</span></div>
                     <div class="education-content">
-
                         <div class="education-header">
-
                             <h3>S.M.T B H Shah (Karjanwala)</h3>
-
                         </div>
-
-                        <p class="education-degree">
-                            Draughtsman Civil Engineering
-                        </p>
-
-                        <p class="education-grade">
-                            Grade: B+ Grade
-                        </p>
-
-                        <p class="education-details">
-                            AutoCAD Software, Team Management
-                        </p>
-
+                        <p class="education-degree">Draughtsman Civil Engineering</p>
+                        <p class="education-grade">Grade: B+ Grade</p>
+                        <p class="education-details">AutoCAD Software, Team Management</p>
                     </div>
-
                 </div>
 
-
-                <!-- EDUCATION ITEM 3 -->
-
                 <div class="education-card reveal">
-
-                    <div class="education-icon">
-                        <span>📚</span>
-                    </div>
-
+                    <div class="education-icon"><span>📚</span></div>
                     <div class="education-content">
-
                         <div class="education-header">
-
                             <h3>Wisdom International School - India</h3>
-
-                            <span class="education-year">
-                                Jul 2017 – May 2019
-                            </span>
-
+                            <span class="education-year">Jul 2017 – May 2019</span>
                         </div>
-
-                        <p class="education-degree">
-                            HSC, Science Stream
-                        </p>
-
+                        <p class="education-degree">HSC, Science Stream</p>
                     </div>
-
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
-    <!-- Projects Section -->
+
+    <!-- ================================
+         PROJECTS
+    ================================ -->
 
     <section id="projects" class="section projects-section">
-
         <div class="container">
 
             <p class="code-label">// featured-projects</p>
-            <h2 class="section-title">
-                Featured Projects
-            </h2>
-
-            <p class="section-subtitle">
-                Some of my recent work
-            </p>
-
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of my recent work</p>
 
             <div class="projects-grid">
 
-
-                <!-- Project 1 -->
-
                 <div class="project-card reveal">
-
                     <div class="project-image">
-                        <img src="images/face-recognition_01.jpg" alt="Face Recognition Project">
+                        <img src="images/face-recognition_01.jpg" alt="Face Recognition Project" loading="lazy">
                     </div>
-
                     <div class="project-content">
-
-                        <h3>
-                            Face Recognition System
-                        </h3>
-
-                        <p>
-
-                            Real-time face detection and recognition system
-                            using Google ML Kit and TensorFlow Lite.
-
-                        </p>
-
+                        <h3>Face Recognition System</h3>
+                        <p>Real-time face detection and recognition system using Google ML Kit and TensorFlow Lite.</p>
                         <div class="tech-tags">
-
-                            <span>Kotlin</span>
-                            <span>ML Kit</span>
-                            <span>TensorFlow Lite</span>
-                            <span>CameraX</span>
-
+                            <span>Kotlin</span><span>ML Kit</span><span>TensorFlow Lite</span><span>CameraX</span>
                         </div>
-
                     </div>
-
                 </div>
 
-
-                <!-- Project 2 -->
-
                 <div class="project-card reveal">
-
                     <div class="project-image">
-                        <img src="images/ai-chatbot_01.jpeg" alt="Offline AI Chatbot">
+                        <img src="images/ai-chatbot_01.jpeg" alt="Offline AI Chatbot" loading="lazy">
                     </div>
-
                     <div class="project-content">
-
-                        <h3>
-                            Offline AI Chatbot
-                        </h3>
-
-                        <p>
-
-                            On-device AI chatbot using MediaPipe with
-                            offline conversation storage.
-
-                        </p>
-
+                        <h3>Offline AI Chatbot</h3>
+                        <p>On-device AI chatbot using MediaPipe with offline conversation storage.</p>
                         <div class="tech-tags">
-
-                            <span>Kotlin</span>
-                            <span>MediaPipe</span>
-                            <span>Room</span>
-
+                            <span>Kotlin</span><span>MediaPipe</span><span>Room</span>
                         </div>
-
                     </div>
-
                 </div>
 
-
-                <!-- Project 3 -->
-
                 <div class="project-card reveal">
-
                     <div class="project-image">
-                        <img src="images/android-tv_01.jpeg" alt="Android TV Kiosk">
+                        <img src="images/android-tv_01.jpeg" alt="Android TV Kiosk" loading="lazy">
                     </div>
-
                     <div class="project-content">
-
-                        <h3>
-                            Android TV Kiosk Application
-                        </h3>
-
-                        <p>
-
-                            Android TV kiosk application with WebView,
-                            D-pad navigation, and dynamic URL configuration.
-
+                        <h3>Android TV Kiosk Application</h3>
+                        <p>Android TV kiosk application with WebView, D-pad navigation, and dynamic URL configuration.
                         </p>
-
                         <div class="tech-tags">
-
-                            <span>Android TV</span>
-                            <span>WebView</span>
-                            <span>Kotlin</span>
-
+                            <span>Android TV</span><span>WebView</span><span>Kotlin</span>
                         </div>
-
                     </div>
-
                 </div>
 
-
-                <!-- Project 4 -->
-
                 <div class="project-card reveal">
-
                     <div class="project-image">
-                        <img src="images/mdm-project_01.jpeg" alt="MDM Solution">
+                        <img src="images/mdm-project_01.jpeg" alt="MDM Solution" loading="lazy">
                     </div>
-
                     <div class="project-content">
-
-                        <h3>
-                            DOW – Digitalization of Workbook
-                        </h3>
-
-                        <p>
-
-                            Offline-first digital workbook application
-                            with kiosk mode and geo-fencing.
-
-                        </p>
-
+                        <h3>DOW – Digitalization of Workbook</h3>
+                        <p>Offline-first digital workbook application with kiosk mode and geo-fencing.</p>
                         <div class="tech-tags">
-
-                            <span>Kotlin</span>
-                            <span>WorkManager</span>
-                            <span>SOTI MobiControl</span>
-
+                            <span>Kotlin</span><span>WorkManager</span><span>SOTI MobiControl</span>
                         </div>
-
                     </div>
-
                 </div>
-
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- Achievements Section -->
+    <!-- ================================
+         ACHIEVEMENTS
+    ================================ -->
 
-    <section class="section achievements-section">
-
+    <section id="achievements" class="section achievements-section">
         <div class="container">
 
             <p class="code-label">// achievements</p>
-            <h2 class="section-title">
-                Achievements
-            </h2>
-
+            <h2 class="section-title">Achievements</h2>
+            <p class="section-subtitle">Impact in numbers</p>
 
             <div class="achievements-grid">
 
-                <div class="achievement-card">
-
+                <div class="achievement-card reveal">
                     <h3><span class="count-up" data-target="500" data-suffix="+">0</span></h3>
-
-                    <p>
-                        Enterprise Users Secured
-                    </p>
-
+                    <p>Enterprise Users Secured</p>
                 </div>
 
-
-                <div class="achievement-card">
-
+                <div class="achievement-card reveal">
                     <h3><span class="count-up" data-target="40" data-suffix="%+">0</span></h3>
-
-                    <p>
-                        Operational Efficiency Improved
-                    </p>
-
+                    <p>Operational Efficiency Improved</p>
                 </div>
 
-
-                <div class="achievement-card">
-
+                <div class="achievement-card reveal">
                     <h3><span class="count-up" data-target="30" data-suffix="%">0</span></h3>
-
-                    <p>
-                        Crash Rate Reduction
-                    </p>
-
+                    <p>Crash Rate Reduction</p>
                 </div>
 
-
-                <div class="achievement-card">
-
+                <div class="achievement-card reveal">
                     <h3><span class="count-up" data-target="7" data-suffix="+">0</span></h3>
-
-                    <p>
-                        Production Applications Delivered
-                    </p>
-
+                    <p>Production Applications Delivered</p>
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
-    <!-- Contact Section -->
-
-    <!-- <section id="contact" class="section contact-section">
-
-        <div class="container">
-
-            <p class="code-label">// lets-connect</p>
-            <h2 class="section-title">
-                Let's Connect
-            </h2>
-
-            <p class="section-subtitle">
-
-                Open to exciting opportunities in product-based companies.
-
-            </p>
-
-
-            <div class="contact-links">
-
-                <a href="mailto:mrdipakkalsariya@gmail.com">
-                    Email
-                </a>
-
-                <a href="https://github.com/mrdipakkalsariya"
-                   target="_blank">
-                    GitHub
-                </a>
-
-                <a href="https://www.linkedin.com/in/dipak-kalsariya/"
-                   target="_blank">
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-    </section> -->
-
     <!-- ================================
-     CONTACT SECTION
-================================ -->
+         CONTACT
+    ================================ -->
 
     <section id="contact" class="section contact-section">
-
         <div class="container">
 
             <p class="code-label">// contact</p>
-
             <h2 class="section-title">Let's Connect</h2>
-
             <p class="section-subtitle">
                 Have an opportunity or want to discuss Android development?
                 Feel free to get in touch.
             </p>
 
-
             <div class="contact-grid">
 
-                <!-- EMAIL CARD -->
-
                 <a href="mailto:mrdipakkalsariya@gmail.com" class="contact-card reveal">
-
-                    <div class="contact-icon">
-                        ✉
-                    </div>
-
+                    <div class="contact-icon">✉</div>
                     <div class="contact-info">
-
                         <span>Email</span>
-
-                        <strong>
-                            mrdipakkalsariya@gmail.com
-                        </strong>
-
+                        <strong>mrdipakkalsariya@gmail.com</strong>
                     </div>
-
                 </a>
-
-
-                <!-- PHONE CARD -->
 
                 <a href="tel:+919898970987" class="contact-card reveal">
-
-                    <div class="contact-icon">
-                        ☎
-                    </div>
-
+                    <div class="contact-icon">☎</div>
                     <div class="contact-info">
-
                         <span>Phone</span>
-
-                        <strong>
-                            +91 98989 70987
-                        </strong>
-
+                        <strong>+91 98989 70987</strong>
                     </div>
-
                 </a>
 
-
-                <!-- LINKEDIN CARD -->
-
-                <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank" class="contact-card reveal">
-
-                    <div class="contact-icon">
-                        in
-                    </div>
-
+                <a href="https://www.linkedin.com/in/dipak-kalsariya/" target="_blank" rel="noopener"
+                    class="contact-card reveal">
+                    <div class="contact-icon">in</div>
                     <div class="contact-info">
-
                         <span>LinkedIn</span>
-
-                        <strong>
-                            linkedin.com/in/dipak-kalsariya
-                        </strong>
-
+                        <strong>linkedin.com/in/dipak-kalsariya</strong>
                     </div>
-
                 </a>
 
-
-                <!-- GITHUB CARD -->
-
-                <a href="https://github.com/mrdipakkalsariya" target="_blank" class="contact-card reveal">
-
-                    <div class="contact-icon">
-                        ◇
-                    </div>
-
+                <a href="https://github.com/mrdipakkalsariya" target="_blank" rel="noopener"
+                    class="contact-card reveal">
+                    <div class="contact-icon">◇</div>
                     <div class="contact-info">
-
                         <span>GitHub</span>
-
-                        <strong>
-                            github.com/mrdipakkalsariya
-                        </strong>
-
+                        <strong>github.com/mrdipakkalsariya</strong>
                     </div>
-
                 </a>
 
             </div>
 
-
-            <!-- CONTACT CTA
-
-            <div class="contact-message">
-
-                <h3>Looking for an Android Developer?</h3>
-
-                <p>
-                    I'm open to discussing new opportunities, interesting
-                    projects, and collaborations.
-                </p>
-
-                <a href="mailto:mrdipakkalsariya@gmail.com" class="btn primary-btn">
-
-                    Send Me an Email →
-
-                </a>
-
-            </div> -->
-
         </div>
-
     </section>
 
-    <!-- Footer -->
 
     <footer>
-
-        <p>
-            © 2026 Dipak Kalsariya. All Rights Reserved.
-        </p>
-
+        <p>© 2026 Dipak Kalsariya. All Rights Reserved.</p>
     </footer>
 
 
-    <script src="script.js"></script>
+    <!-- Back to top -->
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
+    <!-- Certificate lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+        <figure>
+            <img src="" alt="" id="lightboxImg">
+            <figcaption id="lightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
